@@ -8,11 +8,12 @@ T squaring(T num){
 
 template <class T>
 std::vector<T> squaring (std::vector<T> &vec){
+    std::vector<T> result(vec.size());
 
     for (int i = 0; i < vec.size(); ++i ){
-        vec[i] = vec[i] * vec[i];
+        result[i] = vec[i] * vec[i];
     }
-    return vec;
+    return result;
 }
 
 template <class T>
@@ -33,9 +34,9 @@ int main(){
     std::cout << "[IN] ";
     vector_print(vec);
 
-    squaring(vec);
+    std::vector<int> s_vec = squaring(vec);
     std::cout << "[OUT] ";
-    vector_print(vec);
+    vector_print(s_vec);
 
     return 0;
 }

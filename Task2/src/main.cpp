@@ -5,6 +5,9 @@ template <class T>
 
 class table{
 public:
+    table (const table&) = delete;
+    table &operator= (const table&) = delete;
+
     table(int r, int c):row_(r), column_(c){
         create_array();
         fill_array();
@@ -26,6 +29,8 @@ public:
     int size() const {
         return row_ * column_;
     }
+
+
 
 private:
     int row_;
@@ -58,7 +63,7 @@ private:
 
 int main(){
     auto test = table<int>(2, 3);
-    test[2][0] = 4;
+    test[0][0] = 4;
     std::cout << test[0][0] << std::endl;
     std::cout << test.size();
 

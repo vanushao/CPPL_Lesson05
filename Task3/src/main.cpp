@@ -15,13 +15,11 @@ public:
         return count_;
     }
 
-    int operator()(int a){
+    void operator()(int a){
         if (a % 3 == 0){
             sum_ += a;
             count_++;
-            return a;
         }
-        return 0;
     }
 
 private:
